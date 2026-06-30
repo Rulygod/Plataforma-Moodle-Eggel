@@ -3,7 +3,13 @@ services:
 
   db:
   #al poner iamge, docker va a Docker Hub y descarga la imagen oficial mantenida por MariaDB
-    image: mariadb:11.8
+    image: mariadb:11.4
+    command: 
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --innodb_file_format=Barracuda
+      - --innodb_file_per_table=1
+      - --innodb_large_prefix=1
     container_name: moodle_db
 
     restart: unless-stopped

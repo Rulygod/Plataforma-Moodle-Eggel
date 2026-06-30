@@ -49,3 +49,5 @@ RUN docker-php-ext-install gd
 # Activar mod_rewrite de Apache
 # ==================================================
 RUN a2enmod rewrite
+
+COPY docker/php/php.ini /usr/local/etc/php/conf.d/custom.ini
