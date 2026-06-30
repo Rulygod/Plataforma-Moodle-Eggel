@@ -1,0 +1,16 @@
+# Variables de entorno
+.env
+
+# Datos de Moodle
+moodledata/
+
+# Cachés y archivos temporales
+*.log
+*.tmp
+
+# VS Code
+.vscode/
+
+# Sistema
+.DS_Store
+Thumbs.db
