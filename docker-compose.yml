@@ -1,0 +1,45 @@
+#con services listamos todos los servicios del proyecto
+services:
+
+  db:
+  #al poner iamge, docker va a Docker Hub y descarga la imagen oficial mantenida por MariaDB
+    image: mariadb:11.8
+    container_name: moodle_db
+
+    restart: unless-stopped
+
+    environment:
+      MARIADB_DATABASE: ${MOODLE_DB_NAME}
+      MARIADB_USER: ${MOODLE_DB_USER}
+      MARIADB_PASSWORD: ${MOODLE_DB_PASSWORD}
+      MARIADB_ROOT_PASSWORD: ${MOODLE_DB_ROOT_PASSWORD}
+      TZ: ${TZ}
+
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+    ports:
+      - "3306:3306"
+  web:
+    build:
+      context: .
+      dockerfile: docker/php/Dockerfile
+
+    container_name: moodle_web
+
+    restart: unless-stopped
+
+    environment:
+      TZ: ${TZ}
+      
+    depends_on:
+      - db
+    ports:
+      - "8080:80"
+
+    volumes:
+      - ./moodle:/var/www/html
+      - ./moodledata:/var/www/moodledata
+volumes:
+  mariadb_data:
+  
