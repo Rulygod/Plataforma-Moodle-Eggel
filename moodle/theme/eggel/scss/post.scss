@@ -1,0 +1,336 @@
+//
+// ==========================================
+// EGGEL Theme
+// Estilos personalizados
+// ==========================================
+//
+
+// Fondo general
+body {
+    background-color: $eggel-background;
+}
+
+// Barra superior
+.navbar {
+    background-color: $eggel-primary !important;
+}
+
+// Nombre del sitio
+.navbar .navbar-brand,
+.navbar .nav-link {
+    color: #FFFFFF !important;
+}
+
+
+// Botones principales
+.btn-primary {
+    background-color: $eggel-secondary;
+    border-color: $eggel-secondary;
+}
+
+.btn-primary:hover {
+    background-color: $eggel-secondary-light;
+    border-color: $eggel-secondary-light;
+}
+
+// Enlaces
+a {
+    color: $eggel-secondary;
+}
+
+a:hover {
+    color: $eggel-primary;
+}
+
+// ==============================
+// Navbar EGGEL
+// ==============================
+
+.navbar .nav-link:hover,
+.navbar .nav-link:focus,
+.navbar .nav-link.active,
+.navbar .dropdown-toggle:hover,
+.navbar .dropdown-toggle:focus {
+    background-color: rgba(255,255,255,0.10) !important;
+    color: #FFFFFF !important;
+}
+.navbar .nav-link {
+    transition: all .2s ease;
+}
+
+.navbar .dropdown-menu {
+    border-radius: 8px;
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+    background-color: $eggel-secondary;
+    color: #FFFFFF;
+}
+
+// Menú principal de Boost
+.moremenu .nav-link.active {
+    background-color: transparent !important;
+    color: #FFFFFF !important;
+    border-bottom: 3px solid $eggel-accent !important;
+}
+
+.moremenu .nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.10) !important;
+    color: #FFFFFF !important;
+}
+
+// ==========================================
+// Navbar EGGEL
+// ==========================================
+
+.navbar {
+    min-height: 72px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.navbar-brand {
+    font-weight: 600;
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
+}
+
+.navbar .logo {
+    max-height: 42px;
+    width: auto;
+}
+
+.moremenu .nav-link {
+    transition: all .2s ease;
+    border-bottom: 3px solid transparent;
+}
+
+/* ========================================================
+   LOGIN PREMIUM EGGEL - OPTIMIZADO
+======================================================== */
+
+// 1. Limpieza de contenedores nativos de Moodle para lograr "Pantalla Completa"
+body.pagelayout-login {
+    background: #001a3d !important; // Evita parpadeos blancos al cargar
+    
+    #page-wrapper {
+        padding-bottom: 0 !important; // Quita espacios nativos
+    }
+
+    #page {
+        background: linear-gradient(135deg, #001a3d 0%, #002b5b 50%, #0056b3 100%) !important;
+        min-height: 100vh;
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #page-content {
+        width: 100%;
+        margin: 0;
+    }
+
+    // Ocultar footer nativo de Moodle solo en el login para mantener el enfoque limpio
+    #page-footer {
+        display: none !important;
+    }
+}
+
+/* 2. Contenedor Principal (Grid de 2 Columnas) */
+.eggel-login {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr; // Equilibrio visual entre branding y form
+    align-items: center;
+    justify-content: center;
+    min-height: 85vh;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+    gap: 10px;
+    align-items:center;
+
+    // Adaptabilidad para Tablets y Celulares
+    @media (max-width: 991px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        gap: 40px;
+        padding: 20px;
+        text-align: center;
+        min-height: auto;
+    }
+}
+
+/* 3. Sección de Branding (Izquierda) */
+.eggel-login__branding {
+    color: #ffffff;
+    max-width: 500px;
+    animation: fadeIn visualEffect 0.8s ease-out;
+
+    @media (max-width: 991px) {
+        margin: 0 auto;
+    }
+}
+
+.eggel-login__logo {
+    max-width: 280px;
+    height: auto;
+    margin-bottom: 24px;
+    filter: drop-shadow(0 4px 15px rgba(0,0,0,0.3)); // Realza el logo sobre el fondo
+}
+
+.eggel-login__branding h1 {
+    font-family: 'Georgia', 'Times New Roman', serif; // Fuente Serif formal similar a la del logo
+    font-size: 3.5rem;
+    margin-bottom: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #ffffff;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.eggel-login__branding p {
+    opacity: 0.9;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+    border-top: 1px solid rgba(214, 175, 55, 0.4); // Línea dorada sutil como la del logo
+    padding-top: 15px;
+    display: inline-block;
+}
+
+/* 4. Caja del Formulario Moodle (Derecha) */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 24px;
+    padding: 45px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+    width: 100%;
+    max-width: 420px;
+}
+
+/* 5. Estilización de Componentes Internos de Moodle */
+.eggel-login {
+    
+    // Estilo de los inputs nativos de Moodle
+    .form-control {
+        border-radius: 12px;
+        padding: 12px 16px;
+        border: 1.5px solid #e2e8f0;
+        font-size: 0.95rem;
+        transition: all 0.2s ease;
+
+        &:focus {
+            border-color: #0056B3;
+            box-shadow: 0 0 0 4px rgba(0, 86, 179, 0.15);
+        }
+    }
+
+    // El botón de ingreso principal
+    .btn-primary, 
+    #loginbtn {
+        background: linear-gradient(135deg, #D4AF37 0%, #E5A93C 100%) !important;
+        border: none !important;
+        color: #00204A !important;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+        padding: 12px 20px;
+        border-radius: 12px;
+        width: 100%;
+        box-shadow: 0 4px 15px rgba(212, 175, 85, 0.3);
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+            background: linear-gradient(135deg, #E5A93C 0%, #F3C352 100%) !important;
+            box-shadow: 0 6px 20px rgba(212, 175, 85, 0.5);
+            transform: translateY(-1px);
+        }
+
+        &:active {
+            transform: translateY(1px);
+        }
+    }
+
+    // Enlaces de Moodle ("¿Olvidó su contraseña?", etc.)
+    a {
+        color: #0056B3;
+        font-weight: 600;
+        font-size: 0.9rem;
+        transition: color 0.2s ease;
+
+        &:hover {
+            color: #00204A;
+            text-decoration: underline;
+        }
+    }
+
+    // Ajustes para textos secundarios dentro de la caja de login de Moodle
+    .login-heading, .card-title {
+        color: #00204A;
+        font-weight: 700;
+        margin-bottom: 25px;
+        font-size: 1.5rem;
+    }
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.eggel-login__title {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #00204A;
+}
+
+.eggel-login__title h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.eggel-login__title p {
+    font-size: 0.95rem;
+    opacity: 0.7;
+}
+
+// ==========================================
+// ELIMINAR COMPLETAMENTE ELEMENTOS NO DESEADOS DEL LOGIN
+// ==========================================
+
+.pagelayout-login {
+    
+    // Ocultar título "Iniciar sesión"
+    .login-heading,
+    .card-title,
+    h1.login-title,
+    h2.login-title,
+    .loginsitename,
+    .loginbox h2,
+    .loginpanel h2,
+    h2:not(.eggel-login__title h2) {
+        display: none !important;
+    }
+    
+}

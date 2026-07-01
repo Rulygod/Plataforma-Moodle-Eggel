@@ -22,7 +22,7 @@ $THEME->usefallback = true;
 
 // Cargar los estilos principales de Boost.
 $THEME->scss = function($theme) {
-    return theme_boost_get_main_scss_content($theme);
+    return theme_eggel_get_main_scss_content($theme);
 };
 
 // Permite sobrescribir renderizadores.
