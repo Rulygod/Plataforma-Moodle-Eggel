@@ -334,3 +334,315 @@ body.pagelayout-login {
     }
     
 }
+
+
+// ==========================================
+// Navegación secundaria EGGEL
+// ==========================================
+
+.secondary-navigation .nav-link {
+    transition: all .2s ease;
+    border-bottom: 3px solid transparent;
+}
+
+.secondary-navigation .nav-link:hover,
+.secondary-navigation .nav-link:focus {
+    background-color: rgba(0, 43, 91, 0.08) !important;
+    color: $eggel-primary !important;
+}
+
+.secondary-navigation .nav-link.active {
+    background-color: transparent !important;
+    color: $eggel-primary !important;
+    border-bottom: 3px solid $eggel-accent !important;
+}
+
+
+// ==========================================
+// SIDEBAR / DRAWER EGGEL
+// ==========================================
+
+.drawer {
+    
+    // Fondo general del sidebar
+    .drawercontent {
+        background-color: $eggel-primary;
+    }
+
+
+    // Cabecera del drawer
+    .drawerheader {
+        background-color: $eggel-primary;
+        color: #FFFFFF;
+
+        .btn {
+            color: #FFFFFF;
+
+            &:hover {
+                background-color: rgba(255,255,255,0.10);
+            }
+        }
+    }
+
+
+    // Elementos del menú lateral
+    .list-group-item {
+        background-color: transparent;
+        color: #FFFFFF;
+        border: none;
+        transition: all .2s ease;
+
+
+        // Hover
+        &:hover,
+        &:focus {
+            background-color: $eggel-secondary !important;
+            color: #FFFFFF !important;
+        }
+
+
+        // Elemento seleccionado
+        &.active {
+            background-color: $eggel-secondary !important;
+            color: #FFFFFF !important;
+            border-left: 4px solid $eggel-accent;
+        }
+    }
+
+
+    // Links internos
+    a {
+        color: #FFFFFF;
+
+        &:hover {
+            color: #FFFFFF;
+        }
+    }
+
+
+    // Iconos del menú
+    i,
+    .icon {
+        color: $eggel-accent;
+    }
+
+
+    // Separadores
+    hr {
+        border-color: rgba(255,255,255,0.15);
+    }
+}
+
+
+// ==========================================
+// CORRECCIÓN HOVER BOOTSTRAP MOODLE
+// ==========================================
+
+.drawer .list-group-item-action:hover,
+.drawer .list-group-item-action:focus {
+    background-color: $eggel-secondary !important;
+    color: #FFFFFF !important;
+}
+
+// ==========================================
+// BLOQUES DEL SIDEBAR EGGEL
+// Navigation / Administration
+// ==========================================
+
+.drawer {
+
+    // Bloques generales del sidebar
+    .block {
+
+        background-color: rgba(255,255,255,0.06) !important;
+
+        border: 1px solid rgba(212,175,55,0.65) !important;
+
+        border-radius: 14px !important;
+
+        box-shadow:
+            0 4px 15px rgba(0,0,0,0.20);
+
+        color: #FFFFFF;
+
+        transition: all .25s ease;
+
+
+        &:hover {
+
+            border-color: $eggel-accent !important;
+
+            box-shadow:
+                0 6px 20px rgba(212,175,55,0.35);
+
+        }
+    }
+
+
+
+    // Navigation y Administration específicamente
+    .block_navigation,
+    .block_settings {
+
+        background-color: rgba(255,255,255,0.08) !important;
+
+        border: 1px solid $eggel-accent !important;
+
+        border-radius: 14px !important;
+    }
+
+
+
+    // Contenido interno
+    .block .card-body {
+
+        background-color: transparent !important;
+
+        color: #FFFFFF;
+    }
+
+
+
+    /* Títulos Navigation / Administration
+    .block .card-title {
+
+        color: $eggel-accent !important;
+
+        font-weight: 700;
+    }
+        
+    */
+
+
+
+    // Links internos
+    .block a {
+
+        color: #FFFFFF !important;
+
+        transition: all .2s ease;
+        &:hover {
+
+            color: $eggel-accent !important;
+
+        }
+    }
+
+    // Iconos
+    .block .icon {
+
+        color: $eggel-accent !important;
+
+    }
+
+}
+
+// ==========================================
+// COURSE INDEX EGGEL
+// Navegación interna del curso
+// ==========================================
+
+.courseindex {
+
+
+    // Fondo general
+    background-color: transparent;
+
+
+    // Títulos de secciones
+    .courseindex-section-title {
+
+        background-color: rgba(255,255,255,0.08);
+
+        border-radius: 10px;
+
+        margin-bottom: 8px;
+
+        transition: all .25s ease;
+
+
+        &:hover {
+
+            background-color: $eggel-secondary;
+
+        }
+
+    }
+
+
+
+    // Texto de las secciones
+    .courseindex-link {
+
+        color: #FFFFFF !important;
+
+        font-weight: 600;
+
+        transition: all .2s ease;
+
+
+        &:hover {
+
+            color: $eggel-accent !important;
+
+        }
+    }
+
+
+
+    // Sección actual
+    .courseindex-section[aria-selected="true"] {
+
+        .courseindex-section-title {
+
+            border-left: 4px solid $eggel-accent;
+
+            background-color: rgba(212,175,55,0.15);
+
+        }
+
+    }
+
+
+
+    // Elementos internos (Anuncios, actividades)
+    .courseindex-item-content {
+
+        .courseindex-link {
+
+            color: rgba(255,255,255,0.85) !important;
+
+            font-size: .95rem;
+
+
+            &:hover {
+
+                color: $eggel-accent !important;
+
+            }
+        }
+    }
+
+
+
+    // Flechas de expandir
+    .courseindex-chevron {
+
+        color: $eggel-accent;
+
+    }
+
+
+
+    // Badge "Destacado"
+    .current-badge {
+
+        background-color: $eggel-accent !important;
+
+        color: $eggel-primary !important;
+
+        font-weight: 700;
+
+    }
+
+}
